@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export default function ProductCard({ product }: { product: Product }) {
     return (
-        <Link href={`/products/${product.id}`} className='no-underline text-inherit h-[350px] w-[500px]'>
+        <Link href={`/products/${product.id}`} prefetch={false} className='no-underline text-inherit h-[350px] w-[500px]'>
             <Card className="hover:shadow-xl transition h-full">
                 <CardContent className="h-full p-4 flex flex-col items-center">
                     <Image
