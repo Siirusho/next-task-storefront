@@ -17,7 +17,7 @@ A simple storefront built with Next.js, showcasing products from the Fake Store 
 ### 1. Clone the repository
 
 ```bash
-[git clone <repo-url> next-task-storefront](https://github.com/Siirusho/next-task-storefront.git)
+git clone https://github.com/Siirusho/next-task-storefront.git
 cd next-task-storefront
 ```
 
