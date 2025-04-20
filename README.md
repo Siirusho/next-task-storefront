@@ -45,3 +45,7 @@ Open http://localhost:3000 in your browser. The homepage will list products, and
   - Fallback UI for invalid product IDs (404)
   - Loading states for data fetches
 - **SEO & OG**: Dynamic metadata per product via `generateMetadata()`.
+
+
+Deployed url - https://next-task-storefront-tbsu.vercel.app/ ![image](https://github.com/user-attachments/assets/6837805c-05ba-459c-a56b-de7654686e91)
+
