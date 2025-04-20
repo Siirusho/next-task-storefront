@@ -4,10 +4,11 @@ import { getProductById } from "@/lib/api";
 export const runtime = "edge";
 
 export async function GET(
-  req: Request,
-  { params }: { params: { id: string } }
+  _: Request,
+  { params }: { params: Promise<{ id: string }> }
 ) {
-  const product = await getProductById(params.id);
+  const { id } = await params
+  const product = await getProductById(id);
 
   if (typeof product === "string") {
     return new Response("Not found", { status: 404 });

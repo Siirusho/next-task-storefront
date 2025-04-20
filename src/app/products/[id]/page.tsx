@@ -4,12 +4,13 @@ import { getProductById } from '@/lib/api';
 import { Product } from '@/types/product';
 import { Suspense } from 'react';
 
-type Props = {
-  params: { id: string }
+type PageProps = {
+  params: Promise<{ id: string }>
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const product: Product | string = await getProductById(params.id);
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { id } = await (params)
+  const product: Product | string = await getProductById(id);
 
   if (typeof product === 'string') {
     return {
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const ogImageUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/api/og/products/${params.id}`;
+  const ogImageUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/api/og/products/${id}`;
 
   return {
     title: product.title,
@@ -43,7 +44,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function ProductPage({ params }: Props) {
+export default async function ProductPage({ params }: PageProps) {
   const { id } = await params
 
   const product = await getProductById(id);
