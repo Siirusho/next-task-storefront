@@ -17,8 +17,8 @@ A simple storefront built with Next.js, showcasing products from the Fake Store 
 ### 1. Clone the repository
 
 ```bash
-git clone <repo-url> next-task-storefront
-cd storefront
+[git clone <repo-url> next-task-storefront](https://github.com/Siirusho/next-task-storefront.git)
+cd next-task-storefront
 ```
 
 ### 2. Install dependencies
@@ -39,7 +39,7 @@ Open http://localhost:3000 in your browser. The homepage will list products, and
 ## 💡 Decisions & Known Limitations
 
 - **App Router**: Leveraged Next.js 13+ App Router for server components and built-in data fetching.
-- **Data fetching**: Used server-side `fetch()` in page components and `generateMetadata()`. Also provided `generateStaticParams()` for full static generation of product pages.
+- **Data fetching**: Used server-side `fetch()` in page components and `generateMetadata()`.
 - **Styling**: Preferred **ShadCN/UI** components on top of Tailwind for consistent, accessible UI.
 - **Error handling**:
   - Fallback UI for invalid product IDs (404)
