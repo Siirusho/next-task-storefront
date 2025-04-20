@@ -1,7 +1,7 @@
 import { ImageResponse } from "@vercel/og";
 import { getProductById } from "@/lib/api";
 
-export const runtime = "edge"; // Required by @vercel/og
+export const runtime = "edge";
 
 export async function GET(
   req: Request,
