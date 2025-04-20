@@ -1,4 +1,4 @@
-import ProductCard from '@/components/ProductCard';
+import Products from '@/components/Products';
 import { getAllProducts } from '@/lib/api';
 import { Product } from '@/types/product';
 import { Suspense } from 'react';
@@ -13,12 +13,7 @@ export default async function HomePage() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <main className="w-full flex flex-col items-center justify-center p-[20px]">
-        <h1>Mini Storefront with Dynamic Previews</h1>
-        <div className='flex flex-wrap gap-[20px] items-center justify-center'>
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+        <Products products={products} />
       </main>
     </Suspense>
 
